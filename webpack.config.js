@@ -12,7 +12,7 @@ module.exports = {
     app: './src/renderer.js'
   },
   output: {
-    filename: 'app.js',
+    filename: './src/renderer.js',
     path: buildDirectory,
   },
   devtool: false,
@@ -27,8 +27,9 @@ module.exports = {
   },
 
   plugins: [
-	new HtmlWebpackPlugin({filename:'upload.html',template: 'src/assets/upload.html', chunks: ['upload']}),
-  new HtmlWebpackPlugin({filename:'index.html',template: 'src/assets/index.html', chunks: ['app']})
+	new HtmlWebpackPlugin({filename:'unStructured.html',template: 'src/assets/unStructured.html', chunks: ['unStructured']}),
+	new HtmlWebpackPlugin({filename:'semiStructured.html',template: 'src/assets/semiStructured.html', chunks: ['semiStructured']}),
+    new HtmlWebpackPlugin({filename:'index.html',template: 'src/assets/index.html', chunks: ['app']})
   ],
   target: 'electron',
   resolve: {
